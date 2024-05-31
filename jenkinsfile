@@ -1,0 +1,22 @@
+pipeline {
+  agent any
+
+  stages {
+    stage('Checkout') {
+      steps {
+        git 'https://github.com/aabhas5425/hello-world-app.git'
+      }
+    }
+    stage('Build and Deploy') {
+      steps {
+        container('helm') {
+          sh 'helm upgrade --install my-app ./helm-chart'
+        }
+      }
+    }
+  }
+
+  triggers {
+    githubPush()
+  }
+}

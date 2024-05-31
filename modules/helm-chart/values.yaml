@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: your-dockerhub-username/hello-world
+  repository: aabhs5425/hello-world
   tag: "latest"
   pullPolicy: IfNotPresent
 

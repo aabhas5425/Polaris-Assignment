@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Hello-world
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Hello-world
+  template:
+    metadata:
+      labels:
+        app: Hello-world
+    spec:
+      containers:
+        - name: hello-world
+          image: aabhas5425/hello-world:latest
+          ports:
+            - containerPort: 80
